@@ -101,33 +101,7 @@ export default function Hero() {
       </div>
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/45 via-black/30 to-black/65" />
 
-      {/* ── scattered photo cards (desktop only) ─────── */}
-      {/* {SCATTER.map((s) => (
-        <figure
-          key={s.src}
-          className="absolute z-[2] hidden animate-card-in overflow-hidden rounded-2xl lg:block"
-          style={{
-            top: s.style.top,
-            left: s.style.left,
-            width: s.style.width,
-            height: s.style.height,
-            marginLeft: -s.style.width / 2,
-            marginTop: -s.style.height / 2,
-            boxShadow: s.shadow,
-            animationDelay: s.delay,
-            "--card-rotate": s.rotate,
-          }}
-        >
-          <Image
-            src={s.src}
-            alt={s.alt}
-            fill
-            sizes="250px"
-            className="object-cover"
-          />
-        </figure>
-      ))} */}
-
+    
       {/* ── centre column ────────────────────────────── */}
       <div className="relative z-[3] flex w-full max-w-[1200px] flex-col items-center">
         <div className="flex w-full flex-col items-center gap-6 pt-14">

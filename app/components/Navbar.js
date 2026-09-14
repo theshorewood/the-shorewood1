@@ -26,8 +26,8 @@ const SOCIALS = [
  
 },
 ];
-const EASE = "cubic-bezier(.16,1,.3,1)";
-const PANEL_MS = 800; // must match the panel transition duration
+const EASE = "cubic-bezier(0.22, 1, 0.36, 1)";
+const PANEL_MS = 650;// must match the panel transition duration
 
 const PREVIEW = {
   src: "/images/1.jpg",
@@ -213,12 +213,14 @@ export default function Navbar() {
               {/* ── left: preview image ── */}
               <figure
                 className="relative hidden aspect-4/5 max-h-[62vh] overflow-hidden rounded-3xl lg:block"
-                style={{
-                  opacity: open ? 1 : 0,
-                  transform: open ? "scale(1)" : "scale(1.06)",
-                  filter: open ? "blur(0px)" : "blur(12px)",
-                  transition: `opacity 900ms ease ${open ? 350 : 0}ms, transform 1100ms ${EASE} ${open ? 350 : 0}ms, filter 900ms ease ${open ? 350 : 0}ms`,
-                }}
+               style={{
+  opacity: open ? 1 : 0,
+  transform: open
+    ? "scale(1)"
+    : "scale(1.04) translateY(12px)",
+  transition: `opacity 600ms ease 180ms, transform 750ms ${EASE} 180ms`,
+  willChange: "opacity, transform",
+}}
               >
                 <Image
                   src={PREVIEW.src}
@@ -305,11 +307,16 @@ export default function Navbar() {
                 {/* footer row */}
                 <div
                   className="mt-9 flex flex-wrap items-center justify-between gap-5"
-                  style={{
-                    opacity: open ? 1 : 0,
-                    transform: open ? "translateY(0)" : "translateY(16px)",
-                    transition: `opacity 600ms ease ${open ? 900 : 0}ms, transform 600ms ${EASE} ${open ? 900 : 0}ms`,
-                  }}
+                style={{
+  opacity: open ? 1 : 0,
+  transform: open
+    ? "translateY(0)"
+    : "translateY(10px)",
+  transition: `
+    opacity 450ms ease ${open ? 500 : 0}ms,
+    transform 550ms ${EASE} ${open ? 500 : 0}ms
+  `,
+}}
                 >
                   <Link
                     href="/BookATrip"

@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Script from "next/script";
 import LoadingScreen from "./components/LoadingScreen";
+import Chatbot from "./components/Chatbot";
 
 const smooch = Smooch_Sans({
   subsets: ["latin"],
@@ -47,6 +48,7 @@ export default function RootLayout({ children }) {
         <AuroraBackground />
         <Navbar />
         {children}
+         <Chatbot />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-VN5K74QKT5"
           strategy="afterInteractive"
